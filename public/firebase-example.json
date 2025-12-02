@@ -1,0 +1,58 @@
+{
+  "Parkir": {
+    "Area_A": {
+      "S1": {
+        "jarak": 14,
+        "status_inframerah": 0,
+        "status_proximityInduktif": 0,
+        "status_slot": "Kosong",
+        "status_ultrasonik": 0,
+        "timestamp": 707212
+      },
+      "S2": {
+        "jarak": 11,
+        "status_inframerah": 1,
+        "status_proximityInduktif": 0,
+        "status_slot": "Terisi",
+        "status_ultrasonik": 1,
+        "timestamp": 707383
+      }
+    },
+    "Area_B": {
+      "S1": {
+        "jarak": 14,
+        "status_inframerah": 0,
+        "status_proximityInduktif": 0,
+        "status_slot": "Kosong",
+        "status_ultrasonik": 0,
+        "timestamp": 707622
+      },
+      "S2": {
+        "jarak": 14,
+        "status_inframerah": 0,
+        "status_proximityInduktif": 0,
+        "status_slot": "Kosong",
+        "status_ultrasonik": 0,
+        "timestamp": 707793
+      }
+    },
+    "Area_C": {
+      "S1": {
+        "jarak": 14,
+        "status_inframerah": 0,
+        "status_proximityInduktif": 0,
+        "status_slot": "Kosong",
+        "status_ultrasonik": 0,
+        "timestamp": 706700
+      },
+      "S2": {
+        "jarak": 13,
+        "status_inframerah": 0,
+        "status_proximityInduktif": 0,
+        "status_slot": "Kosong",
+        "status_ultrasonik": 0,
+        "timestamp": 706872
+      }
+    }
+  }
+}

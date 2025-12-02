@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gambar Garis dengan Klik</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { margin: 0; font-family: system-ui, sans-serif; }
+    header { padding: 12px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+    button {
+      padding: 8px 12px; border: 1px solid #888; background: transparent; cursor: pointer;
+      border-radius: 6px; font-size: 14px;
+    }
+    button[disabled] { opacity: .5; cursor: not-allowed; }
+    #stage { height: calc(100vh - 60px); }
+    svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+      background: url('area a.png') no-repeat;
+      border-top: 1px solid #ddd;
+      background-size: contain; /* opsional: pastikan gambar muat */
+    }
+    kbd {
+      font: 12px/1 system-ui, sans-serif;
+      border: 1px solid #aaa;
+      border-bottom-width: 2px;
+      padding: 1px 4px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <button id="startBtn" title="Mulai (A)">Start <kbd>A</kbd></button>
+    <button id="stopBtn"  title="Selesai (S)" disabled>Stop <kbd>S</kbd></button>
+    <button id="clearBtn" title="Bersihkan (D)">Clear <kbd>D</kbd></button>
+    <span class="hint">Klik area untuk menambah titik. Pintasan: Start=A, Stop=S, Clear=D.</span>
+  </header>
+
+  <div id="stage">
+    <svg id="board" xmlns="http://www.w3.org/2000/svg" aria-label="Papan gambar"></svg>
+  </div>
+
+  <script>
+    const svg = document.getElementById('board');
+    const startBtn = document.getElementById('startBtn');
+    const stopBtn  = document.getElementById('stopBtn');
+    const clearBtn = document.getElementById('clearBtn');
+    const NS = 'http://www.w3.org/2000/svg';
+
+    let drawing = false;
+    let currentPolyline = null;
+
+    // Fungsi aksi
+    function startDrawing() {
+      if (drawing) return;
+      drawing = true;
+      currentPolyline = document.createElementNS(NS, 'polyline');
+      currentPolyline.setAttribute('fill', 'none');
+      currentPolyline.setAttribute('stroke', '#20FD2F   ');
+      currentPolyline.setAttribute('stroke-width', '2');
+      currentPolyline.setAttribute('stroke-linecap', 'round');
+      currentPolyline.setAttribute('stroke-linejoin', 'round');
+      currentPolyline.setAttribute('points', '');
+      svg.appendChild(currentPolyline);
+      updateUI();
+    }
+
+    function stopDrawing() {
+      drawing = false;
+      currentPolyline = null;
+      updateUI();
+    }
+
+    function clearBoard() {
+      svg.innerHTML = '';
+      drawing = false;
+      currentPolyline = null;
+      updateUI();
+    }
+
+    // Tombol
+    startBtn.addEventListener('click', startDrawing);
+    stopBtn.addEventListener('click', stopDrawing);
+    clearBtn.addEventListener('click', clearBoard);
+
+    // Klik untuk tambah titik
+    svg.addEventListener('click', (e) => {
+      if (!drawing || !currentPolyline) return;
+      const { x, y } = clientToSvg(e.clientX, e.clientY);
+      appendPoint(x, y);
+    });
+
+    // Sentuh
+    svg.addEventListener('touchstart', (e) => {
+      if (!drawing || !currentPolyline) return;
+      const t = e.touches[0];
+      const { x, y } = clientToSvg(t.clientX, t.clientY);
+      appendPoint(x, y);
+      e.preventDefault();
+    }, { passive: false });
+
+    // Pintasan keyboard: A=Start, S=Stop, D=Clear
+    window.addEventListener('keydown', (e) => {
+      // Abaikan jika sedang mengetik di input/textarea/contenteditable
+      const tag = (e.target.tagName || '').toLowerCase();
+      const isEditing = tag === 'input' || tag === 'textarea' || (e.target.isContentEditable === true);
+      if (isEditing) return;
+
+      const key = (e.key || '').toLowerCase();
+      if (key === 'a') {
+        startDrawing();
+      } else if (key === 's') {
+        stopDrawing();
+      } else if (key === 'd') {
+        clearBoard();
+      }
+    });
+
+    function clientToSvg(clientX, clientY) {
+      const rect = svg.getBoundingClientRect();
+      return { x: Math.round(clientX - rect.left), y: Math.round(clientY - rect.top) };
+    }
+
+    function appendPoint(x, y) {
+      const prev = currentPolyline.getAttribute('points') || '';
+      currentPolyline.setAttribute('points', prev + `${x},${y} `);
+
+      // titik penanda
+      const dot = document.createElementNS(NS, 'circle');
+      dot.setAttribute('cx', x);
+      dot.setAttribute('cy', y);
+      dot.setAttribute('r', 2.5);
+      dot.setAttribute('fill', '#93EC50');
+      svg.appendChild(dot);
+    }
+
+    function updateUI() {
+      startBtn.disabled = drawing;
+      stopBtn.disabled  = !drawing;
+    }
+  </script>
+</body>
+</html>

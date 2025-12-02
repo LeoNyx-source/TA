@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                    'dm-sans': ['"DM Sans"', 'sans-serif'],
+                    },
+                    letterSpacing: {
+                    // custom -8%
+                    tighter8: '-0.08em',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-[#FFFFFF] flex flex-col min-h-screen">
+
+  <header class=" text-black mx-2 p-3 rounded-b-3xl shadow-lg">
+    <div class="max-w-6xl mx-auto px-4 flex justify-between items-center h-16">
+      <!-- Logo -->
+      <div class="text-2xl font-medium font-dm-sans tracking-tighter8">Rest Area 754 A</div>
+
+      <!-- Menu utama -->
+      <nav>
+        <ul id="menu" class="hidden md:flex space-x-6">
+          <li><a href="#" class="hover:text-gray-300">Home</a></li>
+          <li><a href="#" class="hover:text-gray-300">Tentang</a></li>
+          <li><a href="#" class="hover:text-gray-300">Layanan</a></li>
+          <li><a href="#" class="hover:text-gray-300">Kontak</a></li>
+        </ul>
+      </nav>
+
+      <!-- Tombol burger -->
+      <button id="burger" class="md:hidden flex flex-col space-y-1">
+        <span class="w-6 h-1 bg-black"></span>
+        <span class="w-6 h-1 bg-black"></span>
+        <span class="w-6 h-1 bg-black"></span>
+      </button>
+    </div>
+
+    <!-- Menu dropdown untuk mobile -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white">
+      <ul class="flex flex-col space-y-2 px-4 py-3">
+        <li><a href="#" class="block hover:text-gray-300">Home</a></li>
+        <li><a href="#" class="block hover:text-gray-300">Tentang</a></li>
+        <li><a href="#" class="block hover:text-gray-300">Layanan</a></li>
+        <li><a href="#" class="block hover:text-gray-300">Kontak</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="px-10 flex flex-col flex-grow">
+    <div class="w-[377.2180480957031px] flex flex-col gap-[-42px]"><div class="flex gap-[3px] self-stretch"><div class="flex items-end gap-1.5 py-[34px]"><svg class="w-[337.13079833984375px] h-[21.857202529907227px] text-[#eaeaea]"></svg><div class="w-[16.41312026977539px] flex flex-col gap-0.5"><div class="h-[8.574230194091797px] bg-[#a8cc8d]"></div><div class="h-[8.574230194091797px] bg-[#a8cc8d]"></div><div class="h-[8.574230194091797px] bg-[#a8cc8d]"></div></div></div><div class="flex items-center gap-2.5 py-9"></div><div class="w-[174.34988403320312px] flex flex-col items-center gap-[35px]"><div class="w-[154px] flex flex-col gap-[9px]"><div class="flex self-stretch"><div class="w-[103px] h-[67px] bg-[#d9d9d9]"></div><div class="w-[51px] flex flex-col items-center gap-[5px]"><div class="w-[17.78177833557129px] flex flex-col gap-[2.649357795715332px]"><div class="h-[8.448634147644043px] bg-[#a8cc8d]"></div><div class="h-[8.448634147644043px] bg-[#a8cc8d]"></div><div class="h-[8.448634147644043px] bg-[#a8cc8d]"></div><div class="h-[8.448634147644043px] bg-[#a8cc8d]"></div></div></div></div><div class="w-[20.70091438293457px] flex flex-col gap-[5.298715591430664px]"><div class="h-[8.448634147644043px] bg-[#a8cc8d]"></div><div class="h-[8.448634147644043px] bg-[#a8cc8d]"></div><div class="h-[8.448634147644043px] bg-[#a8cc8d]"></div><div class="h-[8.448634147644043px] bg-[#a8cc8d]"></div><div class="h-[8.448634147644043px] bg-[#a8cc8d]"></div></div></div><div class="w-[104.84284973144531px] flex flex-col items-center gap-[5px]"><div class="w-[20.70091438293457px] flex flex-col gap-[3.974036693572998px]"><div class="h-[8.448634147644043px] bg-[#a8cc8d]"></div><div class="h-[8.448634147644043px] bg-[#a8cc8d]"></div><div class="h-[8.448634147644043px] bg-[#a8cc8d]"></div><div class="h-[8.448634147644043px] bg-[#a8cc8d]"></div><div class="h-[8.448634147644043px] bg-[#a8cc8d]"></div><div class="h-[8.448634147644043px] bg-[#a8cc8d]"></div><div class="h-[8.448634147644043px] bg-[#a8cc8d]"></div><div class="h-[8.448634147644043px] bg-[#a8cc8d]"></div></div><div class="w-[20.64167594909668px] flex flex-col items-center gap-[3.974036693572998px]"><div class="h-[8.448634147644043px] bg-[#a8cc8d]"></div><div class="h-[8.448634147644043px] bg-[#a8cc8d]"></div><div class="h-[8.448634147644043px] bg-[#a8cc8d]"></div><div class="h-[8.448634147644043px] bg-[#a8cc8d]"></div><div class="h-[8.448634147644043px] bg-[#a8cc8d]"></div><div class="h-[8.448634147644043px] bg-[#a8cc8d]"></div><div class="h-[8.448634147644043px] bg-[#a8cc8d]"></div><div class="h-[8.448634147644043px] bg-[#a8cc8d]"></div></div></div><div class="flex flex-col items-end gap-[7px] self-stretch"><div class="w-[19.059240341186523px] flex flex-col gap-[3.974036693572998px] py-[34px]"><div class="h-[8.448634147644043px] bg-[#a8cc8d]"></div><div class="h-[8.448634147644043px] bg-[#a8cc8d]"></div><div class="h-[8.448634147644043px] bg-[#a8cc8d]"></div><div class="h-[8.448634147644043px] bg-[#a8cc8d]"></div><div class="h-[8.448634147644043px] bg-[#a8cc8d]"></div></div><div class="flex items-center gap-2 self-stretch"><div class="w-[19.059240341186523px] flex flex-col gap-[3.974036693572998px]"><div class="h-[8.448634147644043px] bg-[#a8cc8d]"></div><div class="h-[8.448634147644043px] bg-[#a8cc8d]"></div><div class="h-[8.448634147644043px] bg-[#a8cc8d]"></div><div class="h-[8.448634147644043px] bg-[#a8cc8d]"></div><div class="h-[8.448634147644043px] bg-[#a8cc8d]"></div></div></div></div></div></div><div class="flex items-center gap-[15px] self-stretch"><div class="w-[45.7014274597168px] flex flex-col items-center gap-[17px] pt-12"><div class="w-[16.684070587158203px] flex flex-col gap-px"><div class="h-[8.558110237121582px] bg-[#a8cc8d]"></div><div class="h-[8.558110237121582px] bg-[#a8cc8d]"></div><div class="h-[8.558110237121582px] bg-[#a8cc8d]"></div></div></div><div class="w-[227.65585327148438px] flex flex-col items-center gap-[5px]"><div class="w-[18.32115364074707px] flex flex-col gap-[-2.649357795715332px]"><div class="h-[8.459298133850098px] bg-[#a8cc8d]"></div><div class="h-[8.459298133850098px] bg-[#a8cc8d]"></div><div class="h-[8.459298133850098px] bg-[#a8cc8d]"></div><div class="h-[8.459298133850098px] bg-[#a8cc8d]"></div><div class="h-[8.459298133850098px] bg-[#a8cc8d]"></div><div class="h-[8.459298133850098px] bg-[#a8cc8d]"></div><div class="h-[8.459298133850098px] bg-[#a8cc8d]"></div><div class="h-[8.459298133850098px] bg-[#a8cc8d]"></div><div class="h-[8.459298133850098px] bg-[#a8cc8d]"></div><div class="h-[8.459298133850098px] bg-[#a8cc8d]"></div><div class="h-[8.459298133850098px] bg-[#a8cc8d]"></div><div class="h-[8.459298133850098px] bg-[#a8cc8d]"></div><div class="h-[8.459298133850098px] bg-[#a8cc8d]"></div></div><div class="flex gap-[5px] self-stretch"><div class="flex items-center gap-[3.974036693572998px] px-2.5"><div class="flex items-center gap-1"><div class="w-[15.96049976348877px] h-[8.575579643249512px] bg-[#a8cc8d]"></div><div class="w-[15.96049976348877px] h-[8.575579643249512px] bg-[#a8cc8d]"></div><div class="w-[15.96049976348877px] h-[8.575579643249512px] bg-[#a8cc8d]"></div></div></div><svg class="w-[76.85590362548828px] h-[185.4073028564453px] text-[#d9d9d9]"></svg><div class="flex items-center gap-[3.974036693572998px] px-[9px]"><div class="w-[15.96049976348877px] h-[8.575579643249512px] bg-[#a8cc8d]"></div><div class="w-[15.96049976348877px] h-[8.575579643249512px] bg-[#a8cc8d]"></div><div class="w-[15.96049976348877px] h-[8.575579643249512px] bg-[#a8cc8d]"></div></div></div></div><div class="w-[71.53265380859375px] flex flex-col items-center gap-[7px] pb-[76px]"><div class="w-[25.15489959716797px] h-[25.15489959716797px]"><div class="flex items-center"><svg class="w-[6.288724899291992px] h-[20.936145782470703px] text-black"></svg><svg class="w-[14.653778076171875px] h-[13.340483665466309px] text-black"></svg></div></div><div class="w-[26.377464294433594px] h-[26.377464294433594px]"><div class="flex items-center gap-2.5"></div></div><div class="flex flex-col gap-2.5 self-stretch"></div></div></div></div>
+
+
+    
+  </main>
+
+  <svg width="430" height="560" viewBox="0 0 430 560" fill="none"
+                         xmlns="http://www.w3.org/2000/svg">
+
+
+
+
+
+                         <!-- B1–B8 -->
+                         <g class="">
+                             <path d="M71 367.5H144V235.5H163" stroke="#20FD2F" data-rect="1"></path>
+                             <rect width="23.5396" height="10.3098"
+                                 transform="matrix(0.999991 -0.00410733 0.028725 0.999587 155.914 229.897)"
+                                 fill="#A8CC8D"></rect>
+                             <text transform="matrix(0.999991 -0.00410733 0.028725 0.999587 155.914 229.897)" x="11.77"
+                                 y="5.15" text-anchor="middle" dominant-baseline="middle" font-size="5"
+                                 fill="black">B1</text>
+                         </g>
+
+                         <g class="">
+                             <path d="M71 367.5H144V251.5H163" stroke="#20FD2F" data-rect="2"></path>
+                             <rect width="23.5396" height="10.3098"
+                                 transform="matrix(0.999991 -0.00410733 0.028725 0.999587 156.766 246.418)"
+                                 fill="#A8CC8D"></rect>
+                             <text transform="matrix(0.999991 -0.00410733 0.028725 0.999587 156.766 246.418)" x="11.77"
+                                 y="5.15" text-anchor="middle" dominant-baseline="middle" font-size="5"
+                                 fill="black">B2</text>
+                         </g>
+  </svg>
+
+  <script>
+    const burger = document.getElementById('burger');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    burger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>

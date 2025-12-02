@@ -1,0 +1,71 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API Dokumentasi Smart Parking",
+        "description": "API untuk monitoring status parkir area secara real-time",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/status/{areaName}": {
+            "get": {
+                "tags": [
+                    "Parkir"
+                ],
+                "summary": "Dapatkan status slot parkir per area",
+                "operationId": "4b4d2a3c179a19e663cb197dbc537997",
+                "parameters": [
+                    {
+                        "name": "areaName",
+                        "in": "path",
+                        "description": "Nama area (Contoh: Area_A, Area_B, Area_C)",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Operasi sukses. Mengembalikan status slot.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "Area_A": {
+                                        "S1": {
+                                            "status_slot": "Kosong"
+                                        },
+                                        "S2": {
+                                            "status_slot": "Terisi"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Area tidak ditemukan",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "error": "Area not found or Firebase error"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Parkir",
+            "description": "Parkir"
+        }
+    ]
+}
