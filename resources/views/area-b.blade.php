@@ -8,12 +8,16 @@
      <title>Document</title>
      <script src="https://cdn.tailwindcss.com"></script>
      <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet">
+
      <script>
          tailwind.config = {
              theme: {
                  extend: {
                      fontFamily: {
                          'dm-sans': ['"DM Sans"', 'sans-serif'],
+                         'crimson-text': ['"Crimson Text"', 'serif'],
+
                      },
                      letterSpacing: {
                          // custom -8%
@@ -42,9 +46,10 @@
      </style>
  </head>
 
- <body class="bg-[#FFFFFF] flex flex-col min-h-screen">
+ <body class="bg-black flex flex-col min-h-screen">
+     <img src="bg-style.png" alt="" class="absolute inset-0 w-full h-full object-cover z-0 opacity-15">
 
-     <header class=" text-black mx-2 p-3 rounded-b-3xl shadow-lg">
+     <header class="bg-white text-black z-10 mx-2 p-3 rounded-b-3xl shadow-lg">
          <div class="max-w-6xl mx-auto px-4 flex justify-between items-center h-16">
              <!-- Logo -->
              <div class="text-2xl font-medium font-dm-sans tracking-tighter8">Rest Area 754 A</div>
@@ -52,10 +57,10 @@
              <!-- Menu utama -->
              <nav>
                  <ul id="menu" class="hidden md:flex space-x-6">
-                     <li><a href="#" class="hover:text-gray-300">Home</a></li>
-                     <li><a href="#" class="hover:text-gray-300">Tentang</a></li>
-                     <li><a href="#" class="hover:text-gray-300">Layanan</a></li>
-                     <li><a href="#" class="hover:text-gray-300">Kontak</a></li>
+                     <li><a href="{{ route('beranda') }}" class="hover:text-gray-300">Home</a></li>
+                     <li><a href="{{ route('area-monitoring') }}" class="hover:text-gray-300">Area Monitoring</a></li>
+                     {{-- <li><a href="#" class="hover:text-gray-300">Layanan</a></li>
+                     <li><a href="#" class="hover:text-gray-300">Kontak</a></li> --}}
                  </ul>
              </nav>
 
@@ -70,18 +75,18 @@
          <!-- Menu dropdown untuk mobile -->
          <div id="mobile-menu" class="hidden md:hidden bg-white">
              <ul class="flex flex-col space-y-2 px-4 py-3">
-                 <li><a href="#" class="block hover:text-gray-300">Home</a></li>
-                 <li><a href="#" class="block hover:text-gray-300">Tentang</a></li>
-                 <li><a href="#" class="block hover:text-gray-300">Layanan</a></li>
-                 <li><a href="#" class="block hover:text-gray-300">Kontak</a></li>
+                 <li><a href="{{ route('beranda') }}" class="block hover:text-gray-300">Beranda</a></li>
+                 <li><a href="{{ route('area-monitoring') }}" class="block hover:text-gray-300">Area Monitoring</a></li>
+                 {{-- <li><a href="#" class="block hover:text-gray-300">Layanan</a></li>
+                 <li><a href="#" class="block hover:text-gray-300">Kontak</a></li> --}}
              </ul>
          </div>
      </header>
 
 
-     <main class="px-10 flex flex-col md:flex-row flex-grow justify-center items-center py-10">
+     <main class="px-10 z-10 mb-[100px] flex flex-col md:flex-row flex-grow justify-center items-center py-10">
          <div class="flex flex-col gap-10 justify-center items-center mb-10">
-             <h1 class="text-xl text-center px-5">
+             <h1 class="text-xl text-center mt-10 px-5 text-white font-crimson-text">
                  Ikuti arah panah yang muncul!
              </h1>
              <div class="flex justify-center items-center h-fit w-full sm:w-[400px]">
@@ -90,7 +95,7 @@
          </div>
 
          <div class="flex flex-col gap-5 justify-center items-center">
-             <h1 class="text-xl text-red-600 text-center px-5 mb-5">
+             <h1 class="text-xl text-red-600 text-center px-5 mb-5 text-white">
                  {{-- Silahkan menuju ke Area A yang terletak pada denah dibawah ini --}}
                  Silahkan <span class="font-bold">menuju ke Area B</span> yang terletak pada denah dibawah ini
 
@@ -99,7 +104,7 @@
              <div class="position-relative w-[300px] h-[500px] flex justify-center items-center"
                  style="position: relative !important;">
                  {{-- <img class="position-absolute" src="back.svg" alt="Gambar SVG" width="380" height="" --}}
-                 <img class="position-absolute w-[400px] h-fit " src="area-b-bangunan.png" alt="Gambar SVG"
+                 <img class="position-absolute w-[400px] h-fit " src="area-b-abngunan-fix1.svg" alt="Gambar SVG"
                      width="380" height=""
                      style="position: absolute !important;left:20px;top:20px;z-indez:0 !important;transform: scale(1.2);">
 

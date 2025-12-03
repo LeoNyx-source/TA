@@ -30,39 +30,39 @@
 
 <body class="bg-black flex flex-col min-h-screen relative">
     <img src="bg-style.png" alt="" class="absolute inset-0 w-full h-full object-cover z-0 opacity-15">
-    <header class="backdrop-blur-xl bg-white text-black z-10 mx-2 p-3 rounded-b-3xl shadow-lg">
-        <div class="max-w-6xl mx-auto px-4 flex justify-between items-center h-16">
-            <!-- Logo -->
-            <div class="text-2xl font-medium font-dm-sans tracking-tighter8">Rest Area 754 A</div>
+    <header class="bg-white text-black z-10 mx-2 p-3 rounded-b-3xl shadow-lg">
+         <div class="max-w-6xl mx-auto px-4 flex justify-between items-center h-16">
+             <!-- Logo -->
+             <div class="text-2xl font-medium font-dm-sans tracking-tighter8">Rest Area 754 A</div>
 
-            <!-- Menu utama -->
-            <nav>
-                <ul id="menu" class="hidden md:flex space-x-6">
-                    <li><a href="#" class="hover:text-gray-300">Home</a></li>
-                    <li><a href="#" class="hover:text-gray-300">Tentang</a></li>
-                    <li><a href="#" class="hover:text-gray-300">Layanan</a></li>
-                    <li><a href="#" class="hover:text-gray-300">Kontak</a></li>
-                </ul>
-            </nav>
+             <!-- Menu utama -->
+             <nav>
+                 <ul id="menu" class="hidden md:flex space-x-6">
+                     <li><a href="{{ route('beranda') }}" class="hover:text-gray-300">Home</a></li>
+                     <li><a href="{{ route('area-monitoring') }}" class="hover:text-gray-300">Area Monitoring</a></li>
+                     {{-- <li><a href="#" class="hover:text-gray-300">Layanan</a></li>
+                     <li><a href="#" class="hover:text-gray-300">Kontak</a></li> --}}
+                 </ul>
+             </nav>
 
-            <!-- Tombol burger -->
-            <button id="burger" class="md:hidden flex flex-col space-y-1">
-                <span class="w-6 h-1 bg-black"></span>
-                <span class="w-6 h-1 bg-black"></span>
-                <span class="w-6 h-1 bg-black"></span>
-            </button>
-        </div>
+             <!-- Tombol burger -->
+             <button id="burger" class="md:hidden flex flex-col space-y-1">
+                 <span class="w-6 h-1 bg-black"></span>
+                 <span class="w-6 h-1 bg-black"></span>
+                 <span class="w-6 h-1 bg-black"></span>
+             </button>
+         </div>
 
-        <!-- Menu dropdown untuk mobile -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white">
-            <ul class="flex flex-col space-y-2 px-4 py-3">
-                <li><a href="#" class="block hover:text-black hover:font-bold">Home</a></li>
-                <li><a href="#" class="block hover:text-black hover:font-bold">Tentang</a></li>
-                <li><a href="#" class="block hover:text-black hover:font-bold">Layanan</a></li>
-                <li><a href="#" class="block hover:text-black hover:font-bold">Kontak</a></li>
-            </ul>
-        </div>
-    </header>
+         <!-- Menu dropdown untuk mobile -->
+         <div id="mobile-menu" class="hidden md:hidden bg-white">
+             <ul class="flex flex-col space-y-2 px-4 py-3">
+                 <li><a href="{{ route('beranda') }}" class="block hover:text-gray-300">Beranda</a></li>
+                 <li><a href="{{ route('area-monitoring') }}" class="block hover:text-gray-300">Area Monitoring</a></li>
+                 {{-- <li><a href="#" class="block hover:text-gray-300">Layanan</a></li>
+                 <li><a href="#" class="block hover:text-gray-300">Kontak</a></li> --}}
+             </ul>
+         </div>
+     </header> 
 
     <main class="flex mx-5 flex-col flex-grow z-10">
         <div class="flex flex-col border-b border-gray-400 justify-evenly items-center min-h-screen relative">
@@ -73,7 +73,7 @@
             <h1 class="text-4xl text-center z-10 text-white font-crimson-text">Temukan Lahan Parkir Kosong</h1>
 
             <a href="{{ route('hal2') }}"
-                class="flex z-10 justify-center cursor-pointer items-center transition-transform duration-300 ease-out hover:scale-105 text-white font-bold gap-0.5 bg-[#485c11] px-[22px] py-3.5 rounded-[1000px]">
+                class="flex z-10 mt-10 justify-center cursor-pointer items-center transition-transform duration-300 ease-out hover:scale-105 text-white font-bold gap-0.5 bg-[#485c11] px-[22px] py-3.5 rounded-[1000px]">
                 Arahkan ke Parkir terdekat
             </a>
         </div>
