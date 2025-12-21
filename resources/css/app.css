@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+/* Memberitahu Tailwind file mana saja yang harus discan */
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+/* --- KONFIGURASI TEMA (PENGGANTI tailwind.config.js) --- */
+@theme {
+    /* 1. Daftarkan Font Custom */
+    /* Syntax v4: --font-{nama-class}: {nilai-font}; */
+    --font-dm-sans: "DM Sans", sans-serif;
+    --font-crimson-text: "Crimson Text", serif;
+
+    /* 2. Daftarkan Spacing Custom */
+    /* Syntax v4: --tracking-{nama-class}: {nilai}; */
+    --tracking-tighter8: -0.08em;
+}
+
+/* --- CSS MANUAL UNTUK MAP PARKIR --- */
+/* Ini tetap ditaruh disini */
+path[data-path] {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+path.path-active {
+    opacity: 1 !important;
+    stroke-width: 3px;
+    filter: drop-shadow(0 0 2px #20FD2F);
+}
