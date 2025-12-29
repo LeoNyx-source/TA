@@ -2698,10 +2698,11 @@
                                  // 1. Hitung Status Fuzzy di sini!
                                  const jarak = parseFloat(slotData.jarak || 20);
                                  const status = hitungFuzzyStatus(
-                                     jarak,
-                                     slotData.status_inframerah,
-                                     slotData.status_ultrasonik
-                                 );
+                                          jarak,
+                                          slotData.status_proximityInduktif,
+                                          slotData.status_ultrasonik,
+                                          slotData.status_inframerah
+                                      );
 
                                  // 2. Hitung Statistik
                                  if (status === 'Terisi') {

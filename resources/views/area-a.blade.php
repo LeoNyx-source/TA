@@ -1001,11 +1001,12 @@
 
                          if (rectElement && slotData) {
                              const jarak = parseFloat(slotData.jarak || 20);
-                             const infra = slotData.status_inframerah;
+                             const proxi = slotData.status_proximityInduktif;
                              const ultra = slotData.status_ultrasonik;
+                             const infra = slotData.status_inframerah;
 
                              // Hitung Fuzzy
-                             const statusKeputusan = hitungFuzzyStatus(jarak, infra, ultra);
+                             const statusKeputusan = hitungFuzzyStatus(jarak, proxi, ultra, infra);
 
                              // Update UI
                              if (statusKeputusan === 'Terisi') {
